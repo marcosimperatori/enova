@@ -16,7 +16,7 @@
   <div class="espaco-simples">
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card" style="background-color: #0077b6;">
+        <div class="card shadow" style="background-color: #0077b6;">
           <div class="card-body">
             <div class="valores">
               <i class="fas fa-briefcase"></i>
@@ -33,7 +33,7 @@
       </div>
 
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card" style="background-color: #0077b6;">
+        <div class="card shadow" style="background-color: #0077b6;">
           <div class="card-body">
             <div class="valores">
               <i class="fas fa-bullseye"></i>
@@ -50,7 +50,7 @@
       </div>
 
       <div class="col-lg-4  col-md-6 col-sm-12">
-        <div class="card" style="background-color: #0077b6;">
+        <div class="card shadow" style="background-color: #0077b6;">
           <div class="card-body">
             <div class="valores">
               <i class="fas fa-eye"></i>
@@ -88,7 +88,7 @@
 
     <div class="row info-clientes clientes">
 
-      <div class="card mt-3" style="width: 15rem;background-color: #0077b6;">
+      <div class="card mt-3 shadow" style="width: 15rem;background-color: #0077b6;">
         <div class="efeito text-center">
           <h5 class="titulo">Administrativo</h5>
         </div>
@@ -103,7 +103,7 @@
       </div>
 
 
-      <div class="card mt-3" style="width: 15rem;background-color: #0077b6;">
+      <div class="card mt-3 shadow" style="width: 15rem;background-color: #0077b6;">
         <div class="efeito text-center">
           <h5 class="titulo">Fiscal</h5>
         </div>
@@ -116,7 +116,7 @@
         </div>
       </div>
 
-      <div class="card mt-3" style="width: 15rem;background-color: #0077b6;">
+      <div class="card mt-3 shadow" style="width: 15rem;background-color: #0077b6;">
         <div class="efeito text-center">
           <h5 class="titulo">Contábil</h5>
         </div>
@@ -129,7 +129,7 @@
         </div>
       </div>
 
-      <div class="card mt-3" style="width: 15rem;background-color: #0077b6;">
+      <div class="card mt-3 shadow" style="width: 15rem;background-color: #0077b6;">
         <div class="efeito text-center">
           <h5 class="titulo">Pessoal</h5>
         </div>
@@ -153,7 +153,7 @@
   <div class="espaco-simples container">
 
     <div class="strong text-center mt-3">
-      <h5 class="text-primary">Últimas notícias</h5>
+      <h3 class="text-muted">Últimas notícias</h3>
     </div>
 
 
@@ -161,12 +161,15 @@
 
     <div class="row">
       <?php foreach ($ultimas_noticias as $noticia) : ?>
-        <div class="col-md-3">
-          <div class="card mx-2 my-2">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mx-2 my-4 shadow">
+            <span class="badge badge-light"><?= $noticia->atualizado_em->humanize(); ?></span>
             <div class="card-body">
-              <h5 class="card-title"><?= $noticia->assunto ?></h5>
-              <p class="card-text"><?= $noticia->descricao ?></p>
-              <a href="<?= site_url('noticias/' . $noticia->id) ?>" class="btn btn-outline-primary btn-sm">Leia mais</a>
+              <h5 class="card-title"><?= $noticia->assunto; ?></h5>
+              <p class="card-text"><?= $noticia->resumo; ?></p>
+              <div class="text-right">
+                <a href="<?= site_url('noticias/' . $noticia->id) ?>" class="btn btn-outline-primary btn-sm">Leia mais</a>
+              </div>
             </div>
           </div>
         </div>

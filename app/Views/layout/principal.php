@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <?php if (session()->has('user')) { ?>
+  <?php if (!session()->has('user')) { ?>
     <main class="">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="<?= base_url('noticias'); ?>">Início</a>
@@ -85,7 +85,6 @@
 
   <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/r-2.5.0/datatables.min.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

@@ -15,7 +15,11 @@ class Home extends BaseController
 
     public function index(): string
     {
-        $data['ultimas_noticias'] = $this->noticias->getUltimasNoticias(5);
+        $data['ultimas_noticias'] = $this->noticias->getUltimasNoticias(6);
+
+        foreach ($data['ultimas_noticias'] as &$noticia) {
+            $noticia->resumo = substr($noticia->descricao, 0, 150) . '...';
+        }
 
         return view("home/index", $data);
     }

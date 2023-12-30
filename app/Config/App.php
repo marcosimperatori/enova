@@ -72,7 +72,7 @@ class App extends BaseConfig
      * strings (like currency markers, numbers, etc), that your program
      * should run under for this request.
      */
-    public string $defaultLocale = 'pt_BR';
+    public string $defaultLocale = 'pt-BR';
 
     /**
      * --------------------------------------------------------------------------

@@ -53,9 +53,9 @@ class NoticiaModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getUltimasNoticias($limit = 5)
+    public function getUltimasNoticias($limit = 6)
     {
-        $this->select('id, assunto, LEFT(descricao, 30) as descricao');
+        $this->select('id, assunto,descricao,atualizado_em');
 
         $this->orderBy('atualizado_em', 'DESC');
 
