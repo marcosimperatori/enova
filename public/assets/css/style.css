@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;900&display=swap');
+
+:root {
+    --cor-fundo: #98c1d9;
+    --texto1: orange;
+    --texto2: #03045e;
+    /* #ffc107; */
+    --texto3: #fff;
+    --texto4: #7a7975;
+    --texto5: #fff;
+    /* #c7c6c2;*/
+    --texto6: #fff;
+    /* #914c62;*/
+    --texto7: #e32636;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+.barra-navegacao {
+    background-color: #0077b6;
+}
+
+#menu-principal {
+    background-color: var(--cor-fundo)
+}
+
+.subtitulo {
+    color: var(--texto2);
+}
+
+.espaco-simples {
+    margin-top: 100px;
+}
+
+.gradient {
+    font-weight: bold;
+    text-align: center;
+    /* fundo gradiente */
+    background-image: linear-gradient(to bottom, #ffc107, rgb(146, 142, 142));
+    /* agora colocamos o fundo gradiente dentro do texto com essa propriedade */
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* a cor do texto deve estar como transparent */
+    color: transparent;
+}
+
+.quem-somos {
+    border: 2px solid rgb(173, 170, 170);
+    border-radius: 8px;
+}
+
+.info-clientes {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.info-servicos {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.card-body>.valores>p {
+    color: var(--texto5);
+}
+
+.card-body>.valores>i {
+    color: var(--texto2);
+    font-size: 40px;
+}
+
+.valores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+
+.clientes>.card>.card-body.valores>p {
+    color: var(--texto2);
+}
+
+.clientes>.card>.efeito>h5 {
+    color: var(--texto6);
+}
+
+.efeito>h5::before,
+.efeito>h5::after {
+    content: '';
+    width: 90px;
+    height: 2px;
+    background-color: var(--texto2);
+    display: block;
+    margin: 10px auto;
+}
+
+.info-clientes>.card>.card-body>.valores>.efeito>p {
+    color: var(--texto6);
+}
+
+.rodape {
+    position: relative;
+}
+
+.rodape-texto {
+    position: absolute;
+    left: 180px;
+    top: 315px;
+    color: var(--texto2);
+}
+
+.rodape-texto-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+}
+
+.link>a {
+    display: block;
+    justify-content: left;
+    margin-top: 5px;
+    text-decoration: none;
+    color: #03045e;
+}
+
+.link>a>i {
+    color: #0077b6;
+    margin-right: 10px;
+}
+
+.link>a:hover {
+    text-decoration: underline;
+    color: #0077b6;
+}
+
+.sub {
+    color: #914c62;
+}
+
+.nav-item>a:hover {
+    text-decoration: underline;
+    color: var(--texto3);
+}
+
+/*carousel*/
+
+.container-fluid {
+    padding: 0;
+}
+
+.carousel-inner,
+.carousel-item {
+    height: 50vh;
+}
+
+.carousel-inner,
+.carousel-item>img {
+    object-fit: fill;
+}
+
+.transicao {
+    background-image: linear-gradient(to bottom, #0077b6, #fff);
+}

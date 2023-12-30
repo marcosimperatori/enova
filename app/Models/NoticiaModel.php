@@ -52,4 +52,13 @@ class NoticiaModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getUltimasNoticias($limit = 5)
+    {
+        $this->select('id, assunto, LEFT(descricao, 30) as descricao');
+
+        $this->orderBy('atualizado_em', 'DESC');
+
+        return $this->findAll($limit);
+    }
 }
