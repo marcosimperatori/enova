@@ -45,6 +45,7 @@ $routes->get('publicacoes', 'PagesController::publicacoes');
 $routes->get('departamentos', 'PagesController::departamentos');
 $routes->get('quem-somos', 'PagesController::quemSomos');
 $routes->get('utilitarios', 'PagesController::utilitarios');
+$routes->get('publicacoes_get_all', 'PagesController::getAll');
 
 
 $routes->get('clientes', 'ClienteController::index');

@@ -8,7 +8,7 @@
       <?php echo $this->include('layout/mensagem'); ?>
     </div>
 
-    <div class="jumbotron2 lead mt-3">
+    <div class="jumbotron2 mt-3">
       <div class="card mb-3 shadow tb-noticias" style="max-width: 100%;">
         <div class="card-header">
           <h4>Publicações cadastradas</h4>

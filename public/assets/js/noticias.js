@@ -43,6 +43,7 @@ $("#lista-noticias").DataTable({
       targets: [2],
     },
   ],
+  order: [],
 });
 
 $("#form_cad_noticia").on("submit", function (e) {

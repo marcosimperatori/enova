@@ -25,7 +25,7 @@ class NoticiaModel extends Model
     // Validation
     protected $validationRules      = [
         'assunto'   => 'required|max_length[250]|is_unique[noticias.assunto,id,{$id}]',
-        'descricao' => 'required|is_unique[noticias.descricao,id,{$id}]',
+        'descricao' => 'required',
     ];
 
     protected $validationMessages   = [
@@ -36,7 +36,6 @@ class NoticiaModel extends Model
         ],
         'descricao' => [
             'required'  => 'A descrição da notícia é obrigatória',
-            'is_unique' => 'Esta descrição já está sendo utilizada'
         ],
     ];
     protected $skipValidation       = false;

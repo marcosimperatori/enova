@@ -84,7 +84,7 @@
   </div>
 
   <div class="espaco-simples container">
-    <p class="fs-4 text-center subtitulo" style="margin-top: 15px; margin-bottom: 35px"> Nossos departamentos</p>
+    <h3 class="text-center text-muted" style="margin-top: 15px; margin-bottom: 35px"> Nossos departamentos</h3>
 
     <div class="row info-clientes clientes">
 

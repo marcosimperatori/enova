@@ -18,7 +18,8 @@ class Home extends BaseController
         $data['ultimas_noticias'] = $this->noticias->getUltimasNoticias(6);
 
         foreach ($data['ultimas_noticias'] as &$noticia) {
-            $noticia->resumo = substr($noticia->descricao, 0, 150) . '...';
+            $descricao = mb_substr($noticia->descricao, 0, 140);
+            $noticia->resumo = $descricao . (mb_strlen($noticia->descricao) > 140 ? '...' : '');
             $noticia->codigo = encrypt($noticia->id);
         }
 
