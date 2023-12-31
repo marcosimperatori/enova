@@ -5,7 +5,7 @@
 <div class="container">
   <section>
 
-    <div class="jumbotron mt-3">
+    <div class="jumbotron mt-3 shadow">
       <h4 class="text-muted text-center mb-5"><?php echo $publicacao->assunto; ?></h4>
 
       <div class="text-justify">
