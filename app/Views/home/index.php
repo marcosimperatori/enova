@@ -162,13 +162,13 @@
     <div class="row">
       <?php foreach ($ultimas_noticias as $noticia) : ?>
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card mx-2 my-4 shadow" style="height: 300px;">
+          <div class="card mx-1 my-3 shadow" style="height: 300px;">
             <span class="badge badge-light text-light" style="background-color: #0077b6;"><?= $noticia->atualizado_em->humanize(); ?></span>
             <div class="card-body">
               <h5 class="card-title"><?= $noticia->assunto; ?></h5>
               <p class="card-text"><?= $noticia->resumo; ?></p>
               <div class="text-right">
-                <a href="<?= site_url('noticias/' . $noticia->id) ?>" class="btn btn-outline-primary btn-sm">Leia mais</a>
+                <a href="<?= site_url('publicacao/' . $noticia->codigo) ?>" class="btn btn-outline-primary btn-sm">Leia mais</a>
               </div>
             </div>
           </div>

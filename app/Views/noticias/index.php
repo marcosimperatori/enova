@@ -7,10 +7,11 @@
     <div class="my-3">
       <?php echo $this->include('layout/mensagem'); ?>
     </div>
+
     <div class="jumbotron2 lead mt-3">
       <div class="card mb-3 shadow tb-noticias" style="max-width: 100%;">
         <div class="card-header">
-          <h4>Notícias cadastradas</h4>
+          <h4>Publicações cadastradas</h4>
         </div>
         <div class="card-body">
           <a href="<?php echo base_url('noticias/criar'); ?>" class="btn btn-primary mb-4" title="Permite incluir uma nova notícia no sistema">Nova notícia</a>

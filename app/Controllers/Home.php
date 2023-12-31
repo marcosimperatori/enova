@@ -19,8 +19,26 @@ class Home extends BaseController
 
         foreach ($data['ultimas_noticias'] as &$noticia) {
             $noticia->resumo = substr($noticia->descricao, 0, 150) . '...';
+            $noticia->codigo = encrypt($noticia->id);
         }
 
         return view("home/index", $data);
+    }
+
+    public function getPublicacao($enc_id)
+    {
+        $id = decrypt($enc_id);
+        if (!$id) {
+            return redirect()->to('/');
+        }
+
+        $publicacao = $this->noticias->select('assunto,descricao,criado_em,atualizado_em')
+            ->where('id', $id)->first();
+
+        $data = [
+            'publicacao' => $publicacao
+        ];
+
+        return view('home/ler', $data);
     }
 }

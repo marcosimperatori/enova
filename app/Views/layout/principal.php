@@ -50,7 +50,7 @@
   <?php } else { ?>
     <nav class="navbar navbar-expand-lg navbar-nav-scroll barra-navegacao">
       <div class="container-fluid">
-        <a class="navbar-brand" href="home">
+        <a class="navbar-brand" href="/">
           <img src="<?php echo base_url("assets/img/imgprincipalblack.jpeg") ?>" alt="Bootstrap" width="180" height="180" style="border-radius: 30%;object-fit: fill;margin-left: 15px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color: #03045e;">
@@ -59,7 +59,7 @@
         <div class="collapse navbar-collapse justify-content-md-center" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link fs-4" href="<?php echo base_url("home"); ?>" style="color: #fff;">Home</a>
+              <a class="nav-link fs-4" href="<?php echo base_url("/"); ?>" style="color: #fff;">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fs-4" href="<?php echo base_url("quem-somos"); ?>" style="color: #fff;">Quem somos</a>
@@ -68,7 +68,7 @@
               <a class="nav-link fs-4" href="<?php echo base_url("departamentos"); ?>" style="color: #fff;">Departamentos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-4" href="<?php echo base_url("departamentos"); ?>" style="color: #fff;">Publicações</a>
+              <a class="nav-link fs-4" href="<?php echo base_url("publicacoes"); ?>" style="color: #fff;">Publicações</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fs-4" href="<?php echo base_url("utilitarios"); ?>" style="color: #fff;">Utilitários</a>
