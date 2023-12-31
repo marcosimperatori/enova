@@ -12,7 +12,7 @@
 <body>
   <div class="container mt-5">
     <div class="jumbotron mt-5">
-      <h4>Sua sessão foi encerrada, para acessar novamente <a href="<?= base_url('/') ?>"> clique aqui</a></h4>
+      <h4>Sua sessão foi encerrada, para acessar novamente <a href="<?= base_url('administrar') ?>"> clique aqui</a></h4>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -6,8 +6,8 @@
   <div class="nav">
     <ol class="breadcrumb my-3">
       <li class="breadcrumb-item"><a href="<?php echo site_url("notícias"); ?>">Início</a></li>
-      <li class="breadcrumb-item"><a href="<?php echo site_url("noticias"); ?>">Todas as notícias</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Exclusão de notícia</li>
+      <li class="breadcrumb-item"><a href="<?php echo site_url("noticias"); ?>">Todas as publicações</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Exclusão de publicação</li>
     </ol>
   </div>
 

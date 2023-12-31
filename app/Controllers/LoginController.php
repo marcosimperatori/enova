@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\UserModel;
+use App\Models\NoticiaModel;
 
 class LoginController extends BaseController
 {
@@ -14,15 +15,15 @@ class LoginController extends BaseController
 
     public function logar()
     {
+
         $validated = $this->validate(
             [
-                'email' => 'required|valid_email',
+                'usuario' => 'required',
                 'senha' => 'required'
             ],
             [
-                'email' => [
-                    'required' => 'O email é obrigatório',
-                    'valid_email' => 'Informe um email válido'
+                'usuario' => [
+                    'required' => 'O nome de usuário é obrigatório',
                 ],
                 'senha' => [
                     'required' => 'A senha é obrigatória'
@@ -31,30 +32,48 @@ class LoginController extends BaseController
         );
 
         if (!$validated) {
-            return redirect()->to('/')->with('erros', $this->validator->getErrors());
+            return redirect()->to('administrar')->with('erros', $this->validator->getErrors());
         }
 
         $user = new UserModel();
-        $userFound = $user->select('id,nome,email,senha')->where('email', $this->request->getPost('email'))->first();
+        $userFound = $user->select('id,nome,senha')->where('nome', $this->request->getPost('usuario'))->first();
 
         if (!$userFound) {
-            return redirect()->to('/')->with('error', 'Usuário ou senha incorretos!');
+            return redirect()->to('administrar')->with('error', 'Usuário ou senha incorretos!');
         }
 
         $senha = $this->request->getPost('senha');
 
         if (!password_verify($senha, $userFound->senha)) {
-            return redirect()->to('/')->with('error', 'Usuário ou senha incorretos!');
+            return redirect()->to('administrar')->with('error', 'Usuário ou senha incorretos!');
         }
 
         unset($userFound->senha);
         session()->set('user', $userFound);
-        return redirect()->to('home');
+        return redirect()->to('noticias');
     }
 
     public function logout()
     {
         session()->remove('user');
-        return view('login/logout');
+        return redirect()->to('/');
+        //return view('login/logout');
+    }
+
+    public function addUsuario()
+    {
+        $user = new UserModel();
+
+        $usuario = [
+            'nome' => 'Elton',
+            'email' => 'elton@gmail.com',
+            'senha' => 'EA2024site@'
+        ];
+
+        if ($user->save($usuario)) {
+            echo "Criado um novo usuário";
+        } else {
+            echo "Falha ao tentar criar novo usuário";
+        }
     }
 }

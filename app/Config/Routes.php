@@ -47,19 +47,11 @@ $routes->get('quem-somos', 'PagesController::quemSomos');
 $routes->get('utilitarios', 'PagesController::utilitarios');
 $routes->get('publicacoes_get_all', 'PagesController::getAll');
 
-
-$routes->get('clientes', 'ClienteController::index');
-$routes->get('clientes_get_all', 'ClienteController::getAll');
-$routes->get('clientes/criar', 'ClienteController::criar');
-$routes->get('clientes/editar/(:alphanum)', 'ClienteController::edit/$1');
-$routes->get('clientes/deletar/(:alphanum)', 'ClienteController::deletar/$1');
-$routes->get('clientes/confirma_exclusao/(:alphanum)', 'ClienteController::confirma_exclusao/$1');
-$routes->post('clientes/cadastrar', 'ClienteController::cadastrar');
-$routes->post('clientes/atualizar', 'ClienteController::atualizar');
-
+$routes->get('administrar', 'LoginController::index');
 
 $routes->get('logout', 'LoginController::logout');
 $routes->post('logar', 'LoginController::logar');
+//$routes->get('add-usuario', 'LoginController::addUsuario');
 
 $routes->get('admin', 'RootController::index');
 

@@ -64,13 +64,8 @@ class Filters extends BaseConfig
     public array $filters = [
         'login' => [
             'before' => [
-                'home(/*)?',
-                'clientes(/*)?',
-                'escritorios(/*)?',
-                'atendimentos(/*)?',
-                'certificados(/*)?',
-                'perfil(/*)?',
-                'despesas(/*)?',
+                'noticias(/*)?',
+                'admin(/*)?',
             ]
         ]
     ];

@@ -43,7 +43,7 @@ class NoticiasController extends BaseController
 
         //Criando um novo objeto da entidade usuário
         $noticia = new \App\Entities\NoticiaEntity($post);
-        $noticia->usuario = 1;
+        $noticia->usuario = session()->get('user')->id;
 
 
         if ($this->noticiaModel->protect(false)->save($noticia)) {

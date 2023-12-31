@@ -9,7 +9,7 @@
       <h4 class="text-muted text-center mb-5"><?php echo $publicacao->assunto; ?></h4>
 
       <div class="text-justify">
-        <p><?php echo nl2br(htmlspecialchars($publicacao->descricao)); ?></p>
+        <p><?php echo html_entity_decode($publicacao->descricao); ?></p>
       </div>
 
       <div class="d-flex w-100 justify-content-start small">

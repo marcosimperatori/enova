@@ -1,53 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logar - Atendimento Clientes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&family=Nunito:wght@200;300;400&family=Roboto:wght@100;400;500;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+  <title><?= MY_APP ?></title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
+
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-signin {
+      width: 100%;
+      max-width: 330px;
+      padding: 15px;
+      margin: auto;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <link href="signin.css" rel="stylesheet">
 </head>
 
-<body>
-  <div class="container mt-5">
-    <div class="jumbotron mt-5">
-      <div class="text-center">
-        <p></p>
+<body class="text-center">  
+  <div class="card col-4">
+    <form class="form-signin" action="<?= base_url('logar'); ?>" method="post">
+      <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
+      <img class="mb-4" src="<?php echo base_url('assets/img/favicon.ico') ?>" alt="" width="172" height="172">
+      <h1 class="h3 mb-3 font-weight-normal">Entre com suas credenciais</h1>
+
+      <div>
+        <label for="inputEmail" class="sr-only">Usuário</label>
+        <input type="text" id="usuario" name="usuario" class="form-control mb-1" placeholder="Usuário" required autofocus>
+        <?php if (isset($erros['usuario'])) : ?>
+          <div class="alert alert-danger" role="alert">
+            <?= $erros['usuario'] ?>
+          </div>
+        <?php endif; ?>
       </div>
-      <form action="<?= base_url('logar'); ?>" method="post">
-        <span class="login100-form-title">
-          <h3>Agência Certificadora</h3>
-        </span>
-        <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
 
-        <div class="form-group col-6">
-          <label for="email">Login</label>
-          <input class="form-control" type="text" name="email" placeholder="Email">
-          <?php echo session()->getFlashdata('erros')['email'] ?? '' ?>
-        </div>
+      <div>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input type="password" id="senha" name="senha" class="form-control mb-3" placeholder="Senha" required>
+        <?php if (isset($erros['senha'])) : ?>
+          <div class="alert alert-danger" role="alert">
+            <?= $erros['senha'] ?>
+          </div>
+        <?php endif; ?>
+      </div>
 
-        <div class="form-group col-6">
-          <label for="senha">senha</label>
-          <input class="form-control" type="password" name="senha" placeholder="Senha">
-          <?php echo session()->getFlashdata('erros')['senha'] ?? '' ?>
-        </div>
-
-        <div class="text-danger my-2">
-          <?php echo session()->getFlashdata('error') ?? '' ?>
-        </div>
-        <div class="container">
-          <button class="btn btn-primary">
-            Logar
-          </button>
-        </div>
-
-      </form>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2022</p>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
 </body>
 

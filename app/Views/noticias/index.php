@@ -14,7 +14,7 @@
           <h4>Publicações cadastradas</h4>
         </div>
         <div class="card-body">
-          <a href="<?php echo base_url('noticias/criar'); ?>" class="btn btn-primary mb-4" title="Permite incluir uma nova notícia no sistema">Nova notícia</a>
+          <a href="<?php echo base_url('noticias/criar'); ?>" class="btn btn-primary mb-4" title="Permite incluir uma nova notícia no sistema">Nova publicação</a>
           <table id="lista-noticias" class="table responsive table-hover">
             <thead class="">
               <tr>

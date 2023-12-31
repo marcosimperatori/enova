@@ -18,6 +18,8 @@
 
 
   <link rel="stylesheet" href="<?php echo base_url("/assets/css/style.css") ?>">
+
+  <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
 </head>
 
 <body>
@@ -41,10 +43,10 @@
           <form class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="<?= base_url('perfil'); ?>" class="nav-link"><i class="fas fa-user"></i> &nbsp; <?php /*echo session()->get('user')->nome;*/ ?></a>
+                <a href="<?= base_url('perfil'); ?>" class="nav-link"><i class="fas fa-user"></i> &nbsp; <?php echo session()->get('user')->nome; ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-warning" href="#"><i class="fas fa-sign-out-alt"></i>&nbsp; Sair</a>
+                <a class="nav-link text-warning" href="logout"><i class="fas fa-sign-out-alt"></i>&nbsp; Sair</a>
               </li>
             </ul>
           </form>
@@ -103,7 +105,6 @@
   <script src="<?php echo base_url("assets/js/app.js") ?>"></script>
   <script src="<?php echo base_url("assets/js/comons.js") ?>"></script>
 
-  <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/decoupled-document/ckeditor.js"></script>
 
   <?php echo $this->renderSection('scripts'); ?>
 </body>
