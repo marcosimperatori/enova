@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <?php if (!session()->has('user')) { ?>
+  <?php if (session()->has('user')) { ?>
     <main class="">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="<?= base_url('noticias'); ?>">Início</a>
@@ -66,6 +66,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link fs-4" href="<?php echo base_url("departamentos"); ?>" style="color: #fff;">Departamentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="<?php echo base_url("departamentos"); ?>" style="color: #fff;">Publicações</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fs-4" href="<?php echo base_url("utilitarios"); ?>" style="color: #fff;">Utilitários</a>

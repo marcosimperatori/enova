@@ -153,7 +153,7 @@
   <div class="espaco-simples container">
 
     <div class="strong text-center mt-3">
-      <h3 class="text-muted">Últimas notícias</h3>
+      <h3 class="text-muted">Últimas publicações</h3>
     </div>
 
 
@@ -162,8 +162,8 @@
     <div class="row">
       <?php foreach ($ultimas_noticias as $noticia) : ?>
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card mx-2 my-4 shadow">
-            <span class="badge badge-light"><?= $noticia->atualizado_em->humanize(); ?></span>
+          <div class="card mx-2 my-4 shadow" style="height: 300px;">
+            <span class="badge badge-light text-light" style="background-color: #0077b6;"><?= $noticia->atualizado_em->humanize(); ?></span>
             <div class="card-body">
               <h5 class="card-title"><?= $noticia->assunto; ?></h5>
               <p class="card-text"><?= $noticia->resumo; ?></p>
