@@ -156,9 +156,6 @@
       <h3 class="text-muted">Últimas publicações</h3>
     </div>
 
-
-
-
     <div class="row">
       <?php foreach ($ultimas_noticias as $noticia) : ?>
         <div class="col-lg-4 col-md-6 col-sm-12">
@@ -199,7 +196,3 @@
 </div>
 
 <?php $this->endSection(); ?>
-
-
-<?php echo $this->section('scripts'); ?>
-<?php echo $this->endSection(); ?>

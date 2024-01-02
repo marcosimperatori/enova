@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atendimento Clientes</title>
+  <title><?php echo MY_APP ?></title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 </head>
@@ -12,7 +12,7 @@
 <body>
   <div class="container mt-5">
     <div class="jumbotron mt-5">
-      <h4>Sua sessão foi encerrada, para acessar novamente <a href="<?= base_url('administrar') ?>"> clique aqui</a></h4>
+      <h5 class="text-muted">Sua sessão foi encerrada, para acessar novamente <a href="<?= base_url('/') ?>"> clique aqui</a></h5>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

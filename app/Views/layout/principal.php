@@ -46,7 +46,7 @@
                 <a href="<?= base_url('perfil'); ?>" class="nav-link"><i class="fas fa-user"></i> &nbsp; <?php echo session()->get('user')->nome; ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-warning" href="logout"><i class="fas fa-sign-out-alt"></i>&nbsp; Sair</a>
+                <a class="nav-link text-warning" href="<?php echo base_url('logout') ?>"><i class="fas fa-sign-out-alt"></i>&nbsp; Sair</a>
               </li>
             </ul>
           </form>

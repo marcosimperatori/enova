@@ -11,7 +11,7 @@ $routes = Services::routes();
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('LoginController');
+$routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -40,6 +40,7 @@ $routes->get('noticias/editar/(:alphanum)', 'NoticiasController::edit/$1');
 $routes->post('noticias/atualizar', 'NoticiasController::atualizar');
 $routes->get('noticias/deletar/(:alphanum)', 'NoticiasController::deletar/$1');
 $routes->get('noticias/confirma_exclusao/(:alphanum)', 'NoticiasController::confirma_exclusao/$1');
+
 
 $routes->get('publicacoes', 'PagesController::publicacoes');
 $routes->get('departamentos', 'PagesController::departamentos');
