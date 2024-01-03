@@ -13,10 +13,10 @@ $("#links").DataTable({
   },
   columns: [
     {
-      data: "assunto",
+      data: "nome",
     },
     {
-      data: "alterado",
+      data: "link",
     },
     {
       data: "acoes",
@@ -33,8 +33,8 @@ $("#links").DataTable({
   pageLength: 10,
   columnDefs: [
     {
-      width: "120px",
-      className: "text-center",
+      width: "420px",
+      className: "text-left",
       targets: [1],
     },
     {

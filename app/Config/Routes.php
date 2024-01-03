@@ -42,6 +42,16 @@ $routes->get('noticias/deletar/(:alphanum)', 'NoticiasController::deletar/$1');
 $routes->get('noticias/confirma_exclusao/(:alphanum)', 'NoticiasController::confirma_exclusao/$1');
 
 
+$routes->get('links', 'LinkController::index');
+$routes->get('links_get_all', 'LinkController::getAll');
+$routes->get('links/criar', 'LinkController::criar');
+$routes->post('links/cadastrar', 'LinkController::cadastrar');
+$routes->get('links/editar/(:alphanum)', 'LinkController::edit/$1');
+$routes->post('links/atualizar', 'LinkController::atualizar');
+$routes->get('links/deletar/(:alphanum)', 'LinkController::deletar/$1');
+$routes->get('links/confirma_exclusao/(:alphanum)', 'LinkController::confirma_exclusao/$1');
+
+
 $routes->get('publicacoes', 'PagesController::publicacoes');
 $routes->get('departamentos', 'PagesController::departamentos');
 $routes->get('quem-somos', 'PagesController::quemSomos');

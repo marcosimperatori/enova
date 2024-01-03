@@ -10,7 +10,7 @@ class LinkModel extends Model
     protected $table            = 'links';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType       = '\Entities\LinksEntity';
+    protected $returnType       = '\App\Entities\LinksEntity';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [

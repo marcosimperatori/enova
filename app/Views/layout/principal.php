@@ -37,7 +37,7 @@
               <a class="nav-link" href="<?= base_url('noticias'); ?>">Notícias</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link's</a>
+              <a class="nav-link" href="<?= base_url('links'); ?>">Link's</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
