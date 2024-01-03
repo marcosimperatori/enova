@@ -4,16 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ClienteModel extends Model
+class LinkModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'clientes';
+    protected $table            = 'links';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType       = '\App\Entities\ClienteEntity';
+    protected $returnType       = '\Entities\LinksEntity';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['ativo', 'cnpj', 'emailcli', 'nomecli'];
+    protected $allowedFields    = [
+        'nome_exibicao', 'link', 'categoria'
+    ];
 
     // Dates
     protected $useTimestamps = true;
@@ -24,26 +26,20 @@ class ClienteModel extends Model
 
     // Validation
     protected $validationRules      = [
-        'nomecli'      => 'required|min_length[3]|max_length[250]|is_unique[clientes.nomecli,id,{$id}]',
-        'cnpj'       => 'exact_length[18]|is_unique[clientes.cnpj,id,{$id}]',
-        'emailcli'      => 'permit_empty|is_unique[clientes.emailcli,id,{$id}]',
+        'nome_exibicao' => 'required',
+        'link' => 'required|is_unique[links.link,id,{$id}]'
     ];
 
     protected $validationMessages   = [
-        'nomecli' => [
-            'required'   => 'A razão social é obrigatória.',
-            'min_length' => 'A razão social precisa ter ao menos 03 caracteres.',
-            'max_length' => 'A razão social pode ter no máximo 250 caracteres.',
-            'is_unique'  => 'Este nome de escritório já está sendo usado'
+        'nome_exibicao' => [
+            'required'   => 'O texto do link é obrigatório',
         ],
-        'cnpj' => [
-            'exact_length' => 'O CNPJ deve ter 18 caracteres.',
-            'is_unique'    => 'O CNPJ já está sendo usado'
-        ],
-        'emailcli' => [
-            'is_unique' => 'Este email já está sendo utilizado'
+        'descricao' => [
+            'required'  => 'O link é obrigatório',
+            'is_unique'  => 'Este link já foi cadastrado'
         ],
     ];
+
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
 
