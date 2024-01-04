@@ -18,7 +18,7 @@
           <table id="links" class="table responsive table-hover">
             <thead class="">
               <tr>
-                <th scope="col">Nome exibição</th>
+                <th scope="col">Nome para exibição</th>
                 <th scope="col">Link</th>
                 <th scope="col" class="text-center">Ações</th>
               </tr>
