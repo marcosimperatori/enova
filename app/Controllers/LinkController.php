@@ -42,17 +42,15 @@ class LinkController extends BaseController
         $post = $this->request->getPost();
 
         //Criando um novo objeto da entidade usuário
-        $noticia = new \App\Entities\NoticiaEntity($post);
-        $noticia->usuario = session()->get('user')->id;
+        $link = new \App\Entities\LinksEntity($post);
 
-
-        if ($this->linkModel->protect(false)->save($noticia)) {
+        if ($this->linkModel->protect(false)->save($link)) {
 
             //captura o id do cliente que acabou de ser inserido no banco de dados
             $retorno['id'] = $this->linkModel->getInsertID();
             $NovoLink = $this->buscaLinkOu404($retorno['id']);
             session()->setFlashdata('sucesso', "O link ($NovoLink->nome_exibicao) foi incluída no sistema");
-            $retorno['redirect_url'] = base_url('noticias');
+            $retorno['redirect_url'] = base_url('links');
 
             return $this->response->setJSON($retorno);
         }
@@ -88,17 +86,17 @@ class LinkController extends BaseController
 
         $retorno['token'] = csrf_hash();
         $post = $this->request->getPost();
-        $noticia = $this->buscaLinkOu404($post['id']);
-        $noticia->fill($post);
+        $link = $this->buscaLinkOu404($post['id']);
+        $link->fill($post);
 
-        if ($noticia->hasChanged() == false) {
-            $retorno['info'] = "Não houve alteração na notícia!";
+        if ($link->hasChanged() == false) {
+            $retorno['info'] = "Não houve alteração no link!";
             return $this->response->setJSON($retorno);
         }
 
-        if ($this->linkModel->protect(false)->save($noticia)) {
-            session()->setFlashdata('sucesso', "A notícia: $noticia->assunto foi atualizada");
-            $retorno['redirect_url'] = base_url('noticias');
+        if ($this->linkModel->protect(false)->save($link)) {
+            session()->setFlashdata('sucesso', "O link: $link->link foi atualizado");
+            $retorno['redirect_url'] = base_url('links');
             return $this->response->setJSON($retorno);
         }
 
@@ -144,7 +142,7 @@ class LinkController extends BaseController
             return redirect()->back();
         }
 
-        $atributos = ['links.id', 'links.nome_exibicao', 'links.link'];
+        $atributos = ['links.id', 'links.nome_exibicao', 'links.link', 'links.categoria'];
         $links = $this->linkModel->select($atributos)
             ->orderBy('nome_exibicao', 'asc')->findAll();
 
@@ -153,6 +151,7 @@ class LinkController extends BaseController
         foreach ($links as $link) {
             $id = encrypt($link->id);
             $data[] = [
+                'categoria' => $link->categoria,
                 'nome'  => $link->nome_exibicao,
                 'link'  => '<a href="' . $link->link . '" target="_blank">' . $link->link . ' </a>',
                 'acoes' => '<a  href="' . base_url("links/editar/$id") . '" title="Editar"><i class="fas fa-edit text-success"></i></a> &nbsp; 

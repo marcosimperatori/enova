@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\LinkModel;
 use App\Models\NoticiaModel;
 
 class PagesController extends BaseController
@@ -31,7 +32,14 @@ class PagesController extends BaseController
 
     public function utilitarios()
     {
-        return view('pages/utilitarios');
+        $links = new LinkModel();
+        $listaLink = $links->select('*')->orderBy('nome_exibicao')->findAll();
+
+        $data = [
+            'links' => $listaLink,
+        ];
+
+        return view('pages/utilitarios', $data);
     }
 
     public function getAll()

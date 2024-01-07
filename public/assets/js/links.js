@@ -13,6 +13,9 @@ $("#links").DataTable({
   },
   columns: [
     {
+      data: "categoria",
+    },
+    {
       data: "nome",
     },
     {
@@ -33,14 +36,14 @@ $("#links").DataTable({
   pageLength: 10,
   columnDefs: [
     {
-      width: "420px",
+      width: "400px",
       className: "text-left",
-      targets: [1],
+      targets: [2],
     },
     {
       width: "40px",
       className: "text-center",
-      targets: [2],
+      targets: [3],
     },
   ],
   order: [],

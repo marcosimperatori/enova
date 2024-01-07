@@ -33,7 +33,7 @@ $("#lista-noticias").DataTable({
   pageLength: 10,
   columnDefs: [
     {
-      width: "120px",
+      width: "160px",
       className: "text-center",
       targets: [1],
     },

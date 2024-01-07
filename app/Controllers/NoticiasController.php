@@ -154,7 +154,7 @@ class NoticiasController extends BaseController
             $id = encrypt($noticia->id);
             $data[] = [
                 'assunto'   => $noticia->assunto,
-                'alterado' => date('d/m/Y', strtotime($noticia->atualizado_em)),
+                'alterado' => date('d/m/Y H:i:s', strtotime($noticia->atualizado_em)),
                 'acoes'     => '<a  href="' . base_url("noticias/editar/$id") . '" title="Editar"><i class="fas fa-edit text-success"></i></a> &nbsp; 
                                 <a  href="' . base_url("noticias/deletar/$id") . '" title="Excluir"><i class="fas fa-trash-alt text-danger"></i></a>'
             ];
