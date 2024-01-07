@@ -6,8 +6,6 @@
 
   <div class="form-group col-lg-12">
     <label for="descricao" class="form-label mt-2">Link</label>
-    <textarea name="link" id="link" cols="30" rows="15" class="form-control"><?php echo $link->link ?></textarea>
-
-
+    <input type="text" class="form-control" id="link" name="link" value="<?php echo $link->link; ?>">
   </div>
 </div>

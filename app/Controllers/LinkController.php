@@ -71,11 +71,11 @@ class LinkController extends BaseController
             return redirect()->to('home');
         }
 
-        $noticia = $this->buscaLinkOu404($id);
+        $link = $this->buscaLinkOu404($id);
 
         $data = [
             'titulo' => "Editando a notícia",
-            'noticia' => $noticia,
+            'link' => $link,
         ];
         return view('links/editar', $data);
     }

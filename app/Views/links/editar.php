@@ -39,5 +39,4 @@
 
 <?php echo $this->section('scripts'); ?>
 <script src="<?php echo base_url("assets/js/links.js") ?>"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
 <?php echo $this->endSection(); ?>
