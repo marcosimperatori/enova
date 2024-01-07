@@ -134,7 +134,7 @@ class LinkController extends BaseController
         if (!$this->linkModel->delete($id)) {
             session()->setFlashdata('warning', "Não foi possível excluir a notícia");
         }
-        return redirect()->to('noticias');
+        return redirect()->to('links');
     }
 
     public function getAll()

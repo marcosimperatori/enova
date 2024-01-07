@@ -6,7 +6,7 @@
     <div class="nav">
       <ol class="breadcrumb my-3">
         <li class="breadcrumb-item"><a href="<?php echo site_url("noticias"); ?>">Início</a></li>
-        <li class="breadcrumb-item"><a href="<?php echo site_url("noticias"); ?>">Todos os links</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo site_url("links"); ?>">Todos os links</a></li>
         <li class="breadcrumb-item active" aria-current="page">Editar link</li>
       </ol>
     </div>
