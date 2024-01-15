@@ -61,11 +61,7 @@
         </div>
       </div>
 
-      <script>
-        $(function() {
-          $('#myTab li:last-child button').tab('show')
-        })
-      </script>
+      
     </div>
 
     <div class="espaco-simples"></div>
@@ -73,4 +69,9 @@
   <?php $this->endSection(); ?>
 
   <?php echo $this->section('scripts'); ?>
+  <script>
+        $(function() {
+          $('#myTab li:last-child button').tab('show')
+        })
+      </script>
   <?php echo $this->endSection(); ?>

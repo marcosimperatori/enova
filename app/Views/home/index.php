@@ -16,7 +16,7 @@
   <div class="espaco-simples">
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card shadow" style="background-color: #0077b6;">
+        <div class="card shadow my-2" style="background-color: #0077b6;">
           <div class="card-body">
             <div class="valores">
               <i class="fas fa-briefcase"></i>
@@ -33,7 +33,7 @@
       </div>
 
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card shadow" style="background-color: #0077b6;">
+        <div class="card shadow my-2" style="background-color: #0077b6;">
           <div class="card-body">
             <div class="valores">
               <i class="fas fa-bullseye"></i>
@@ -50,7 +50,7 @@
       </div>
 
       <div class="col-lg-4  col-md-6 col-sm-12">
-        <div class="card shadow" style="background-color: #0077b6;">
+        <div class="card shadow my-2" style="background-color: #0077b6;">
           <div class="card-body">
             <div class="valores">
               <i class="fas fa-eye"></i>
@@ -143,9 +143,9 @@
         </div>
       </div>
     </div>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <div class="d-grid gap-2 d-md-flex justify-content-center">
 
-      <a href="departamentos" class="btn btn-outline-primary btn-sm mt-4">Saiba mais sobre nossos departamentos...</a>
+      <a href="departamentos" class="btn btn-outline-primary btn-sm mt-4 text-center">Saiba mais sobre nossos departamentos...</a>
 
     </div>
   </div>

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= MY_APP ?></title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +23,38 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg barra-navegacao">
+    <a class="navbar-brand" href="/">
+      <img src="<?php echo base_url("assets/img/imgprincipalblack.jpeg") ?>" alt="Bootstrap" width="180" height="180" style="border-radius: 30%;object-fit: fill;margin-left: 15px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: white;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-md-center" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link fs-4" href="<?php echo base_url("/"); ?>" style="color: #fff;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4" href="<?php echo base_url("quem-somos"); ?>" style="color: #fff;">Quem somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4" href="<?php echo base_url("departamentos"); ?>" style="color: #fff;">Departamentos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4" href="<?php echo base_url("publicacoes"); ?>" style="color: #fff;">Publicações</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4" href="<?php echo base_url("utilitarios"); ?>" style="color: #fff;">Utilitários</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
   <?php if (session()->has('user')) { ?>
     <main class="">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="<?= base_url('noticias'); ?>">Início</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,7 +62,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="<?= base_url('noticias'); ?>">Notícias</a>
+              <a class="nav-link" href="<?= base_url('noticias'); ?>">Publicações</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= base_url('links'); ?>">Link's</a>
@@ -53,37 +81,6 @@
         </div>
       </nav>
     </main>
-  <?php } else { ?>
-    <nav class="navbar navbar-expand-lg navbar-nav-scroll barra-navegacao">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <img src="<?php echo base_url("assets/img/imgprincipalblack.jpeg") ?>" alt="Bootstrap" width="180" height="180" style="border-radius: 30%;object-fit: fill;margin-left: 15px;">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color: #03045e;">
-          <span class="navbar-toggler-icon" style="color: #ffc107;"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-md-center" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link fs-4" href="<?php echo base_url("/"); ?>" style="color: #fff;">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-4" href="<?php echo base_url("quem-somos"); ?>" style="color: #fff;">Quem somos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-4" href="<?php echo base_url("departamentos"); ?>" style="color: #fff;">Departamentos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-4" href="<?php echo base_url("publicacoes"); ?>" style="color: #fff;">Publicações</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-4" href="<?php echo base_url("utilitarios"); ?>" style="color: #fff;">Utilitários</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
   <?php } ?>
 
   <div class="container1">
@@ -93,7 +90,6 @@
   <script src="<?php echo base_url("assets/jquery/jquery-3.7.0.min.js"); ?>"></script>
 
   <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/r-2.5.0/datatables.min.js"></script>
-
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

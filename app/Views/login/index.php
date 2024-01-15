@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
 
 
@@ -49,36 +49,42 @@
   <link href="signin.css" rel="stylesheet">
 </head>
 
-<body class="text-center">  
-  <div class="card col-4">
-    <form class="form-signin" action="<?= base_url('logar'); ?>" method="post">
-      <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-      <img class="mb-4" src="<?php echo base_url('assets/img/favicon.ico') ?>" alt="" width="172" height="172">
-      <h1 class="h3 mb-3 font-weight-normal">Entre com suas credenciais</h1>
+<body class="text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-10 col-sm-12">
+        <div class="card">
+          <form class="form-signin" action="<?= base_url('logar'); ?>" method="post">
+            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
+            <img class="mb-4" src="<?php echo base_url('assets/img/favicon.ico') ?>" alt="" width="172" height="172">
+            <h1 class="h3 mb-3 font-weight-normal">Entre com suas credenciais</h1>
 
-      <div>
-        <label for="inputEmail" class="sr-only">Usuário</label>
-        <input type="text" id="usuario" name="usuario" class="form-control mb-1" placeholder="Usuário" required autofocus>
-        <?php if (isset($erros['usuario'])) : ?>
-          <div class="alert alert-danger" role="alert">
-            <?= $erros['usuario'] ?>
-          </div>
-        <?php endif; ?>
+            <div>
+              <label for="inputEmail" class="sr-only">Usuário</label>
+              <input type="text" id="usuario" name="usuario" class="form-control mb-1" placeholder="Usuário" required autofocus>
+              <?php if (isset($erros['usuario'])) : ?>
+                <div class="alert alert-danger" role="alert">
+                  <?= $erros['usuario'] ?>
+                </div>
+              <?php endif; ?>
+            </div>
+
+            <div>
+              <label for="inputPassword" class="sr-only">Senha</label>
+              <input type="password" id="senha" name="senha" class="form-control mb-3" placeholder="Senha" required>
+              <?php if (isset($erros['senha'])) : ?>
+                <div class="alert alert-danger" role="alert">
+                  <?= $erros['senha'] ?>
+                </div>
+              <?php endif; ?>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+            <a href="<?php echo base_url('/'); ?>" class="btn btn-sm btn-secondary mt-3">Voltar</a>
+          </form>
+        </div>
       </div>
-
-      <div>
-        <label for="inputPassword" class="sr-only">Senha</label>
-        <input type="password" id="senha" name="senha" class="form-control mb-3" placeholder="Senha" required>
-        <?php if (isset($erros['senha'])) : ?>
-          <div class="alert alert-danger" role="alert">
-            <?= $erros['senha'] ?>
-          </div>
-        <?php endif; ?>
-      </div>
-
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2022</p>
-    </form>
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
