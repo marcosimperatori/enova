@@ -17,8 +17,8 @@ class App extends BaseConfig
      *
      *    http://example.com/
      */
-    #public string $baseURL = 'http://enova21.cotidianosoftware.com.br/';
-    public string $baseURL = 'http://site.cotidianosoftware.com.br/';
+    public string $baseURL = 'http://localhost:8080/';
+    #public string $baseURL = 'http://site.cotidianosoftware.com.br/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.

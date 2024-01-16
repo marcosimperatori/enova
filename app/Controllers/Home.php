@@ -22,7 +22,10 @@ class Home extends BaseController
             $noticia->resumo = $descricao . (mb_strlen($noticia->descricao) > 140 ? '...' : '');
             $noticia->codigo = encrypt($noticia->id);
 
-            $noticia->atualizado = date('d/m/Y H:i:s', strtotime($noticia->atualizado_em)); //->humanize();
+            //$time = Time::parse('March 9, 2016 12:00:00', 'America/Sao_Paulo');
+            //$noticia->atualizado = $time->humanize();
+
+            $noticia->atualizado = date('d/m/Y H:i:s', strtotime($noticia->atualizado_em)); // date('d/m/Y H:i:s', strtotime($noticia->atualizado_em));
         }
 
         return view("home/index", $data);
@@ -43,5 +46,16 @@ class Home extends BaseController
         ];
 
         return view('home/ler', $data);
+    }
+
+    public function dadosServidor()
+    {
+        //echo phpinfo();
+        
+        // Obtém as extensões carregadas
+        $extensões = get_loaded_extensions();
+
+        // Imprime as extensões
+        print_r($extensões);
     }
 }
