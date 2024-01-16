@@ -15,12 +15,14 @@ class Home extends BaseController
 
     public function index(): string
     {
-        $data['ultimas_noticias'] = $this->noticias->getUltimasNoticias(6);
+        $data['ultimas_noticias'] = $this->noticias->getUltimasNoticias();
 
-        foreach ($data['ultimas_noticias'] as &$noticia) {
+        foreach ($data['ultimas_noticias'] as $noticia) {
             $descricao = mb_substr($noticia->descricao, 0, 140);
             $noticia->resumo = $descricao . (mb_strlen($noticia->descricao) > 140 ? '...' : '');
             $noticia->codigo = encrypt($noticia->id);
+
+            $noticia->atualizado = date('d/m/Y H:i:s', strtotime($noticia->atualizado_em)); //->humanize();
         }
 
         return view("home/index", $data);

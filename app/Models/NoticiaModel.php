@@ -13,7 +13,7 @@ class NoticiaModel extends Model
     protected $returnType       = '\App\Entities\NoticiaEntity';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['exibir', 'assunto', 'descricao', 'usuario'];
+    protected $allowedFields    = ['exibir', 'assunto', 'descricao', 'usuario', 'atualizado_em'];
 
     // Dates
     protected $useTimestamps = true;

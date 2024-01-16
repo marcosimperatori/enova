@@ -16,7 +16,6 @@
 
   <link href="https://cdn.datatables.net/v/bs5/dt-1.13.8/r-2.5.0/datatables.min.css" rel="stylesheet">
 
-
   <link rel="stylesheet" href="<?php echo base_url("/assets/css/style.css") ?>">
 
   <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
@@ -52,7 +51,7 @@
     </div>
   </nav>
 
-  <?php if (session()->has('user')) { ?>
+  <?php if (session()->has('user')) : ?>
     <main class="">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,7 +80,7 @@
         </div>
       </nav>
     </main>
-  <?php } ?>
+  <?php endif; ?>
 
   <div class="container1">
     <?php echo $this->renderSection('conteudo'); ?>

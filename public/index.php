@@ -16,7 +16,9 @@ if (version_compare(PHP_VERSION, $minPhpVersion, '<')) {
 define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
 
 // Ensure the current directory is pointing to the front controller's directory
-chdir(FCPATH);
+if (getcwd() . DIRECTORY_SEPARATOR != FCPATH) {
+    chdir(FCPATH);
+}
 
 /*
  *---------------------------------------------------------------
@@ -29,8 +31,8 @@ chdir(FCPATH);
 
 // Load our paths config file
 // This is the line that might need to be changed, depending on your folder structure.
-require FCPATH . '../app/Config/Paths.php';
-#require FCPATH . '../../site_elton/app/Config/Paths.php';
+#require FCPATH . '../app/Config/Paths.php';
+require FCPATH . '../../contabil/app/Config/Paths.php';
 // ^^^ Change this line if you move your application folder
 
 $paths = new Config\Paths();

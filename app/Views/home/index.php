@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div id="carousel">
     <div class="">
-      <div class="">
+      <div>
         <img src="<?php echo base_url("assets/img/header.jpeg") ?>" class="d-block w-100" style="object-fit: cover; height: 600px;" alt=" ...">
       </div>
     </div>
@@ -151,30 +151,28 @@
   </div>
 
   <div class="espaco-simples container">
-
     <div class="strong text-center mt-3">
       <h3 class="text-muted">Últimas publicações</h3>
     </div>
-
     <div class="row">
       <?php foreach ($ultimas_noticias as $noticia) : ?>
         <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card mx-1 my-3 shadow" style="height: 300px;">
-            <span class="badge badge-light text-light" style="background-color: #0077b6;"><?= $noticia->atualizado_em->humanize(); ?></span>
+            <span class="badge badge-light text-light" style="background-color: #0077b6;"><?php echo $noticia->atualizado;
+                                                                                          ?></span>
             <div class="card-body">
-              <h5 class="card-title"><?= $noticia->assunto; ?></h5>
-              <p class="card-text"><?= $noticia->resumo; ?></p>
+              <h5 class="card-title"><?php echo $noticia->assunto; ?></h5>
+              <p class="card-text"><?php echo $noticia->resumo; ?></p>
               <div class="text-right">
-                <a href="<?= site_url('publicacao/' . $noticia->codigo) ?>" class="btn btn-outline-primary btn-sm">Leia mais</a>
+                <a href="<?php echo site_url('publicacao/' . $noticia->codigo);
+                          ?>" class="btn btn-outline-primary btn-sm">Leia mais</a>
               </div>
             </div>
           </div>
         </div>
       <?php endforeach; ?>
     </div>
-
   </div>
-
 
   <div class="espaco-simples"></div>
 
