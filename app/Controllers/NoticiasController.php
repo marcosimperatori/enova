@@ -51,7 +51,7 @@ class NoticiasController extends BaseController
             //captura o id do cliente que acabou de ser inserido no banco de dados
             $retorno['id'] = $this->noticiaModel->getInsertID();
             $NovaNoticia = $this->buscaNoticiaOu404($retorno['id']);
-            session()->setFlashdata('sucesso', "A notícia ($NovaNoticia->assunto) foi incluída no sistema");
+            session()->setFlashdata('sucesso', "A publicação ($NovaNoticia->assunto) foi incluída no sistema");
             $retorno['redirect_url'] = base_url('noticias');
 
             return $this->response->setJSON($retorno);

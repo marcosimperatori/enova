@@ -1,4 +1,4 @@
-<?php if (session()->has('sucesso')) : ?>
+'<?php if (session()->has('sucesso')) : ?>
 
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Sucesso!</strong> <?php echo session('sucesso'); ?>.

@@ -13,8 +13,10 @@
       </div>
 
       <div class="d-flex w-100 justify-content-start small">
-        <p class="text-primary mr-5">Criado <?php echo $publicacao->criado_em; //->humanize(); ?></p>
-        <p class="text-primary">Atualizado <?php echo $publicacao->atualizado_em; //->humanize(); ?></p>
+        <p class="text-primary mr-5">Criado <?php echo date('d/m/Y H:i:s', strtotime($publicacao->criado_em)); //->humanize();                                            
+                                            ?></p>
+        <p class="text-primary">Atualizado <?php echo date('d/m/Y H:i:s', strtotime($publicacao->atualizado_em)); //->humanize(); 
+                                            ?></p>
       </div>
 
       <div class="text-right">
